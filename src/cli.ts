@@ -165,8 +165,10 @@ function collectServices(ast: Collection<ASTNode>) {
     .forEach(path => {
       const reference = getReference(path);
       if (reference) {
-        const name = path.node.id.name;
-        services.push({ reference: reference + '.' + name, name });
+        const name = path.node.id?.name;
+        if (name) {
+          services.push({ reference: reference + '.' + name, name });
+        }
       }
     });
   return services;
