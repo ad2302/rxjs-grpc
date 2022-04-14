@@ -1,4 +1,4 @@
-import { promisify } from 'bluebird';
+import { promisify } from 'util';
 import * as jscodeshift from 'jscodeshift';
 import { ASTNode, ASTPath } from 'jscodeshift';
 import { Collection } from 'jscodeshift/src/Collection';
@@ -11,7 +11,7 @@ import * as tmp from 'tmp';
 const pbjsMain = promisify(pbjs.main);
 const pbtsMain = promisify(pbts.main);
 
-const createTempDir = promisify((callback: (error: any, result: tmp.SynchrounousResult) => any) => {
+const createTempDir = promisify<tmp.SynchrounousResult>((callback: (error: any, result: tmp.SynchrounousResult) => any) => {
   tmp.dir({ unsafeCleanup: true }, (error, name, removeCallback) => {
     callback(error, { name, removeCallback, fd: -1 });
   });

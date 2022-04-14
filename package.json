@@ -13,6 +13,9 @@
   "bin": {
     "rxjs-grpc": "./bin/rxjs-grpc"
   },
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "start": "node js/cli",
     "build": "tsc",
@@ -30,7 +33,6 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.3.7",
     "@grpc/proto-loader": "^0.6.4",
-    "bluebird": "^3.4.7",
     "jscodeshift": "^0.13.1",
     "minimist": "^1.2.6",
     "mz": "^2.7.0",
@@ -46,13 +48,12 @@
     "tmp": "^0.2.1"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.0.37",
     "@types/glob": "^5.0.30",
     "@types/jasmine": "^2.5.43",
     "@types/jscodeshift": "^0.11.4",
     "@types/minimist": "^1.2.2",
     "@types/mz": "^0.0.30",
-    "@types/node": "^7.0.5",
+    "@types/node": "^8.0.0",
     "@types/tmp": "^0.0.32",
     "glob": "^7.1.1",
     "jasmine": "^2.5.3",
